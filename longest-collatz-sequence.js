@@ -6,9 +6,9 @@ function getBiggestCollatzSequence() {
     integersIterationsResults[1] = 0;
 
     for (currentInteger = 2; currentInteger <= bigestRangeInteger; currentInteger++) {
-        integersIterationsResults[currentInteger] = iterationsResults(currentInteger, 0, integersIterationsResults);
+        //integersIterationsResults[currentInteger] = iterationsResults(currentInteger, 0, integersIterationsResults);
         // var max = max < iterationsResults(currentInteger, 0). ? ;
-        //integersIterationsResults = constructIterationsArray(currentInteger, 0, integersIterationsResults)
+        integersIterationsResults = constructIterationsArray(currentInteger, 0, integersIterationsResults)
 
         /*var collatzSequence = [];
         collatzSequence = iterationsResultsImproved(currentInteger, [], integersIterationsResults);
@@ -32,8 +32,8 @@ function nextInteger(integer) {
 }
 
 function constructIterationsArray(integer, iterationsCount, iterationsResults) {
-    if (integer <= integersIterationsResults.length - 1)
-        return [...iterationsResults, integersIterationsResults[integer] + iterationsCount]
+    if (integer <= iterationsResults.length - 1)
+        return [...iterationsResults, iterationsResults[integer] + iterationsCount]
     else {
         var lIterationsCount = iterationsCount + 1;
         return constructIterationsArray(nextInteger(integer), lIterationsCount, iterationsResults);
