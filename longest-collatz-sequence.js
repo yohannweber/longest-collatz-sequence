@@ -1,14 +1,15 @@
 
 
 function getBiggestCollatzSequence() {
-    const bigestRangeInteger = 1000000;
+    const bigestRangeInteger = 10000;
     var integersIterationsResults = [];
     integersIterationsResults[1] = 0;
 
-    for (currentInteger = 2; currentInteger <= bigestRangeInteger; currentInteger++) {
-        //integersIterationsResults[currentInteger] = iterationsResults(currentInteger, 0, integersIterationsResults);
+    const startTime = Date.now();
+    for (var currentInteger = 2; currentInteger <= bigestRangeInteger; currentInteger++) {
+        integersIterationsResults[currentInteger] = iterationsResults(currentInteger, 0, integersIterationsResults);
         // var max = max < iterationsResults(currentInteger, 0). ? ;
-        integersIterationsResults = constructIterationsArray(currentInteger, 0, integersIterationsResults)
+        //integersIterationsResults = constructIterationsArray(currentInteger, 0, integersIterationsResults)
 
         /*var collatzSequence = [];
         collatzSequence = iterationsResultsImproved(currentInteger, [], integersIterationsResults);
@@ -18,6 +19,8 @@ function getBiggestCollatzSequence() {
     console.log("Integer with longest Collatz sequence")
     console.log("Range : 1 to " + bigestRangeInteger);
     console.log(result[0] + " with " + result[1] + " steps reach");
+    const timeElapsed = Date.now() - startTime;
+    console.log("computing time : " + timeElapsed + "ms");
 }
 
 
@@ -30,7 +33,7 @@ function iterationsResults(integer, iterationsCount, integersIterationsResults) 
 function nextInteger(integer) {
     return integer % 2 === 0 ? integer / 2 : integer * 3 + 1;
 }
-
+/*
 function constructIterationsArray(integer, iterationsCount, iterationsResults) {
     if (integer <= iterationsResults.length - 1)
         return [...iterationsResults, iterationsResults[integer] + iterationsCount]
@@ -48,7 +51,7 @@ function iterationsResultsWithoutArray(integer, iterationsCount) {
         var lIterationsCount = iterationsCount + 1;
         return iterationsResultsWithoutArray(nextInteger(integer), lIterationsCount);
     }
-}
+}*/
 
 function iterationsResultsImproved(integer, collatzSequence, resultsArray) {
     var lCollatzSequence = [...collatzSequence, integer]
