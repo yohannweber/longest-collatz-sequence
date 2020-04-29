@@ -1,0 +1,14 @@
+{
+  "name": "longest-collatz-sequence",
+  "version": "1.0.0",
+  "description": "Get the integer which have the longest Collatz sequence",
+  "main": "longest-collatz-sequence.js",
+  "scripts": {
+    "start" : "node longest-collatz-sequence.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yohann WEBER",
+  "license": "ISC",
+  "dependencies": {
+  }
+}
